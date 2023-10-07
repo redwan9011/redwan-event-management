@@ -1,0 +1,46 @@
+ [
+      {
+        "id": 1,
+        "title": "Weddings",
+        "image": "https://i.ibb.co/YcKdPDX/5-500x500.webp",
+        "price": "$10,000 - $50,000",
+        "short_description": "Celebrate the union of two souls in a grand and memorable ceremony."
+      },
+      {
+        "id": 2,
+        "title": "Birthday Parties",
+        "image": "https://i.ibb.co/Fbmwf7L/D13-D8313-5-F32-43-DC-8-D7-F-19-A550-D03565-1024x768.jpg",
+        "price": "$500 - $5,000",
+        "short_description": "Throw a lively birthday bash and make someone's special day truly exceptional."
+      },
+      {
+        "id": 3,
+        "title": "Anniversaries",
+        "image": "https://i.ibb.co/Bc3mmQj/anniversary4.webp",
+        "price": "$1,000 - $10,000",
+        "short_description": "Commemorate years of togetherness with a beautiful anniversary celebration."
+      },
+      {
+        "id": 4,
+        "title": "Engagement Parties",
+        "image": "https://i.ibb.co/k1txSNs/images.jpg",
+        "price": "$800 - $5,000",
+        "short_description": "Mark the beginning of a new chapter in love with an unforgettable engagement party."
+      },
+      {
+        "id": 5,
+        "title": "Retirement Parties",
+        "image": "https://i.ibb.co/wcxqDpD/63fe54c17e9fc.webp",
+        "price": "$500 - $3,000",
+        "short_description": "Bid farewell to a well-deserving retiree with a memorable retirement celebration."
+      },
+      {
+        "id": 6,
+        "title": "Baby Shower",
+        "image": "https://i.ibb.co/Fbmwf7L/D13-D8313-5-F32-43-DC-8-D7-F-19-A550-D03565-1024x768.jpg",
+        "price": "$300 - $2,000",
+        "short_description": "Welcome a new life into the world with a joyous and heartwarming baby shower."
+      }
+    ]
+  
+  
