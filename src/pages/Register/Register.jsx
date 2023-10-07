@@ -1,28 +1,77 @@
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 
 const Register = () => {
+  const {register} = useContext(AuthContext)
+  const navigate = useNavigate()
+
+const [ success, setSuccess ] = useState(null);
+const [ error, setError ] = useState(null);
+
+
+  const handleRegister = (e) => {
+
+    setError('')
+    setSuccess('')
+
+    e.preventDefault();
+  
+
+    const name = e.target.name.value;
+    const image = e.target.image.value;
+
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    
+    if(password.length < 6) {
+      setError('password should have atleast 6 characters')
+      return
+    }
+    if( (!/[A-Z]/.test(password))) {
+      setError('password should have atleast One Capital characters');
+      return
+    }
+    if( (!/^(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?])[a-zA-Z\d!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]{8,}/.test(password))) {
+      setError('password should have atleast One special characters');
+      return
+    }
+
+
+    register(email, password)
+    .then(result => {
+      console.log(result.user)
+      setSuccess('User Created successfull')
+      navigate('/')
+    })
+    .catch(error => {
+      console.log(error)
+      setError(error.message)
+    })
+  } 
+
     return (
         <div>
         <div className="hero  py-6">
           
 <div className="card  shadow-2xl  w-5/12 ">
 <h1 className="text-center text-4xl font-bold pt-5">Register Now</h1>
-  <form className="card-body">
+  <form onSubmit={handleRegister} className="card-body">
 
 
   <div className="form-control">
       <label className="label">
         <span className="label-text font-semibold">Name</span>
       </label>
-      <input type="text" placeholder="Name" className="input input-bordered" required />
+      <input type="text" name="name" placeholder="Name" className="input input-bordered"  />
     </div>
     
     <div className="form-control">
       <label className="label">
         <span className="label-text font-semibold">Photo URL</span>
       </label>
-      <input type="text" placeholder="phot URL" className="input input-bordered"  />
+      <input type="text" name="image" placeholder="phot URL" className="input input-bordered"  />
     </div>
 
 
@@ -30,27 +79,46 @@ const Register = () => {
       <label className="label">
         <span className="label-text font-semibold">Email</span>
       </label>
-      <input type="email" placeholder="email" className="input input-bordered"  />
+      <input type="email" name="email" placeholder="email" className="input input-bordered"  />
     </div>
 
     <div className="form-control">
       <label className="label">
         <span className="label-text font-semibold">Password</span>
       </label>
-      <input type="password" placeholder="password" className="input input-bordered" required />
+      <input type="password" name="password" placeholder="password" className="input input-bordered" required />
       <label className="label">
         <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
       </label>
     </div>
     <div className="form-control mt-6">
-      <button className="btn btn-primary">Login</button>
+    <input type="submit" value="Register" className="btn btn-primary" />
     </div>
   </form>
 
 <p className="text-center text-xl pb-4 font-semibold">Already have an account? <Link className="text-red-700 font-bold hover:underline" to = "/login">Login</Link> </p>
+
+<div className="pb-6">
+  
+{
+        success && <p className="text-center text-green-700 "> {success}</p>
+      }
+
+      {
+        error &&  <p className="text-center text-red-700"> {error}</p>
+      }
+</div>
+ 
 </div>
 
+
+  
+
+
+
 </div>
+
+
     </div>
     );
 };
