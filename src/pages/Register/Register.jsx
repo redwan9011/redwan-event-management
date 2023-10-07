@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { updateProfile, } from "firebase/auth";
 
 
 const Register = () => {
@@ -43,6 +44,21 @@ const [ error, setError ] = useState(null);
     .then(result => {
       console.log(result.user)
       setSuccess('User Created successfull')
+
+// set profile
+      updateProfile( result.user , {
+        displayName:name,
+         photoURL:image,
+      }) 
+      .then(() =>{
+        console.log('profile updated');
+      })
+      .catch (error => {
+        console.log(error.message)
+      })
+
+
+
       navigate('/')
     })
     .catch(error => {
@@ -50,6 +66,7 @@ const [ error, setError ] = useState(null);
       setError(error.message)
     })
   } 
+
 
     return (
         <div>
