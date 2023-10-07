@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { updateProfile, } from "firebase/auth";
 
@@ -7,7 +7,7 @@ import { updateProfile, } from "firebase/auth";
 const Register = () => {
   const {register} = useContext(AuthContext)
   const navigate = useNavigate()
-
+  const location = useLocation()
 const [ success, setSuccess ] = useState(null);
 const [ error, setError ] = useState(null);
 
@@ -59,7 +59,7 @@ const [ error, setError ] = useState(null);
 
 
 
-      navigate('/')
+      navigate(location?.state ? location?.state : '/')
     })
     .catch(error => {
       console.log(error)
@@ -104,12 +104,11 @@ const [ error, setError ] = useState(null);
         <span className="label-text font-semibold">Password</span>
       </label>
       <input type="password" name="password" placeholder="password" className="input input-bordered" required />
-      <label className="label">
-        <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-      </label>
+    
     </div>
     <div className="form-control mt-6">
     <input type="submit" value="Register" className="btn btn-primary" />
+  
     </div>
   </form>
 

@@ -1,12 +1,14 @@
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { FcGoogle, } from "react-icons/fc";
 
 
 
 const Login = () => {
 const [error , setError] = useState(null)
-  const {login} = useContext(AuthContext)
+  const {login,  googleLogin} = useContext(AuthContext)
+  const location = useLocation()
 
   const navigate = useNavigate()
 
@@ -19,12 +21,25 @@ const [error , setError] = useState(null)
 
     login(email, password)
     .then(() => {
-     navigate('/')
+     navigate(location?.state ? location?.state : '/')
     })
     .catch(error => {
     
       setError(error)
     })
+  }
+
+  const handleGoogleLogin = e => {
+    e.preventDefault()
+    googleLogin()
+    .then(result => {
+      console.log(result.user)
+      navigate(location?.state ? location?.state : '/')
+    })
+    .catch(error => {
+      console.log(error.message);
+    })
+    console.log('google login')
   }
     return (
         <div>
@@ -49,7 +64,13 @@ const [error , setError] = useState(null)
           </label>
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Login</button>
+         <input type="submit" value="Login" className="btn btn-primary" />
+
+        </div>
+        <h4 className="text-center font-bold  my-3">OR</h4>
+        <div onClick={handleGoogleLogin} className="text-center border-2 border-black py-2 cursor-pointer flex justify-center items-center gap-2">
+         <FcGoogle className="text-xl"></FcGoogle>
+          <button className="font-bold">Continue With GOOGLE</button>
         </div>
       </form>
 
