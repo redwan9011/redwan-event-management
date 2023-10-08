@@ -6,14 +6,44 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 const Navbar = () => {
 const {user,logOut} = useContext(AuthContext)
     const links = <>
-    <li> <NavLink to="/">Home</NavLink></li>
-    <li className="mx-5"><NavLink to="/about">About Us</NavLink></li>
-     <li><NavLink to="/contact">Contact US</NavLink></li>
+    <li > <NavLink 
+    className="px-6"
+   style={({ isActive,  }) => {
+    return {
+      fontWeight: isActive ? "bold" : "",
+      background: isActive ? "red" : "black",
+      color: isActive ? "white" : "white",
+    };
+  }}
+     to="/">Home
+     </NavLink></li>
+
+    <li className="mx-5"><NavLink to="/about"
+         className="px-6"
+         style={({ isActive,  }) => {
+          return {
+            fontWeight: isActive ? "bold" : "",
+            background: isActive ? "red" : "black",
+            color: isActive ? "white" : "white",
+          };
+        }}
+    >About Us</NavLink></li>
+
+     <li><NavLink
+      className="px-6"
+      style={({ isActive,  }) => {
+       return {
+         fontWeight: isActive ? "bold" : "",
+         background: isActive ? "red" : "black",
+         color: isActive ? "white" : "white",
+       };
+     }}
+     to="/contact">Contact US</NavLink></li>
     
  </>
     return (
         <div>
-           <div className="navbar bg-base-100">
+           <div className="navbar ">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -25,7 +55,8 @@ const {user,logOut} = useContext(AuthContext)
     }
       </ul>
     </div>
-   <img className="w-16 " src="https://i.ibb.co/V9Kxqbq/zarla-top-events-1x1-2400x2400-20211123-4fgq7httf3p79gk64jb6.png" alt="" />
+  
+  <img className="w-32" src="https://i.ibb.co/2FrgDdc/top-pr-agencies.webp" alt="" />
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
@@ -41,7 +72,7 @@ const {user,logOut} = useContext(AuthContext)
         <p className="text-xl font-bold">{user?.displayName}</p>
         <Link onClick={logOut} className="btn btn-primary" to="/">LogOut</Link> 
       </div>: 
-      <Link className="btn " to = "/login">Login / Register </Link>
+      <Link className="btn bg-red-600 hover:bg-red-800 text-white" to = "/login">Login / Register </Link>
     }
   </div>
 </div>

@@ -46,7 +46,7 @@ const [error , setError] = useState(null)
             <div className="hero  py-6">
               
     <div className="card  shadow-2xl  w-5/12 ">
-    <h1 className="text-center text-4xl font-bold pt-5">Login Now</h1>
+    <h1 className="text-center text-5xl font-bold pt-5 text-red-500">Login Now</h1>
       <form className="card-body" onSubmit={handleLogin}>
         <div className="form-control">
           <label className="label">
@@ -64,11 +64,11 @@ const [error , setError] = useState(null)
           </label>
         </div>
         <div className="form-control mt-6">
-         <input type="submit" value="Login" className="btn btn-primary" />
+         <input type="submit" value="Login" className="btn  bg-red-600 hover:bg-red-800 text-white" />
 
         </div>
         <h4 className="text-center font-bold  my-3">OR</h4>
-        <div onClick={handleGoogleLogin} className="text-center border-2 border-black py-2 cursor-pointer flex justify-center items-center gap-2">
+        <div onClick={handleGoogleLogin} className="text-center border-2 border-red-400 py-2 cursor-pointer flex justify-center items-center gap-2">
          <FcGoogle className="text-xl"></FcGoogle>
           <button className="font-bold">Continue With GOOGLE</button>
         </div>

@@ -73,7 +73,7 @@ const [ error, setError ] = useState(null);
         <div className="hero  py-6">
           
 <div className="card  shadow-2xl  w-5/12 ">
-<h1 className="text-center text-4xl font-bold pt-5">Register Now</h1>
+<h1 className="text-center text-4xl font-bold pt-5 text-red-500">Register Now</h1>
   <form onSubmit={handleRegister} className="card-body">
 
 
@@ -107,7 +107,7 @@ const [ error, setError ] = useState(null);
     
     </div>
     <div className="form-control mt-6">
-    <input type="submit" value="Register" className="btn btn-primary" />
+    <input type="submit" value="Register" className="btn bg-red-600 hover:bg-red-800 text-white" />
   
     </div>
   </form>

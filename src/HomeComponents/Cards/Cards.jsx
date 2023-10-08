@@ -4,11 +4,15 @@ import CardShow from './CardShow';
 const Cards = ({cards}) => {
     
     return (
-        <div className='grid grid-cols-3 gap-5'>
+       <div>
+         <h1 className='text-6xl font-bold font-mono text-center mb-5'>Our Services!!</h1>
+         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
+           
             {
                 cards.map(card => <CardShow key={card.id} card={card}> </CardShow>)
             }
         </div>
+       </div>
     );
 };
 
