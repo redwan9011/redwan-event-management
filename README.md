@@ -1,8 +1,15 @@
-# React + Vite
+Website name: Redwan Event Management
+Wesite live link: 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Different feature and functionalities about the website: 
 
-Currently, two official plugins are available:
+* There is 3 routs , Home, About Us and Contact us, Home page have 6 section like nav, banner, planning, service , clients and footer.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* Nav section have a logo, menu and the right corner a login or registration button.'
+
+* When the user Click on the login/Registration button, he or she will go to the login page, and they can login the website, and if he has no account then bottom of the login page he will see register button and he can tooggle the page to registration page, and there he can register his account with his name, photo, email and passoword
+
+* Password should must have 6 character, One Capital letter and One special Character.
+
+* If a user not logged in the site then they cant see the About us and Contact US page and also view details button in service section, when they click this buttons , the site show them the login page.
+

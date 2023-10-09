@@ -19,7 +19,10 @@ A: NaN
 B: TypeError
 C: "12"
 D: 3
-Answer
+Answer: C
+Explanation: when you sum  number and string , they add side by side,
+
+
 3. Write the correct answer from the following options and give an explanation (2-5 lines).
 const food = ["🍕", "🍫", "🥑", "🍔"];
 const info = { favoriteFood: food[0] };
@@ -31,7 +34,9 @@ A: ['🍕', '🍫', '🥑', '🍔']
 B: ['🍝', '🍫', '🥑', '🍔']
 C: ['🍝', '🍕', '🍫', '🥑', '🍔']
 D: ReferenceError
-Answer
+Answer : A
+Explanation: I think the answer is A, cause the main food function is an array, and it doesn't change when called info.favouriteFood
+
 4. Write the correct answer from the following options and give an explanation (2-5 lines).
 function sayHi(name) {
   return `Hi there, ${name}`;
@@ -42,7 +47,9 @@ A: Hi there,
 B: Hi there, undefined
 C: Hi there, null
 D: ReferenceError
-Answer
+Answer: B
+Explanation: Maybe the answer is B , i am not sure about this at this moment.
+
 5. Write the correct answer from the following options and give an explanation (2-5 lines).
 let count = 0;
 const nums = [0, 1, 2, 3];
@@ -56,4 +63,6 @@ A: 1
 B: 2
 C: 3
 D: 4
-Answer
+Answer : " "
+
+explanation: i have no idea about this right nouw
