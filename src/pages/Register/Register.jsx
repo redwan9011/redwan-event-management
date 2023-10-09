@@ -72,8 +72,8 @@ const [ error, setError ] = useState(null);
         <div>
         <div className="hero  py-6">
           
-<div className="card  shadow-2xl  w-5/12 ">
-<h1 className="text-center text-4xl font-bold pt-5 text-red-500">Register Now</h1>
+<div className="card  shadow-2xl  w-5/6  lg:w-5/12 ">
+<h1 className="text-center text-3xl md:text-5xl font-bold pt-5 text-red-500">Register Now</h1>
   <form onSubmit={handleRegister} className="card-body">
 
 

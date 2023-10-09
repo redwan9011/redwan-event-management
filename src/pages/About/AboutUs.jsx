@@ -1,9 +1,14 @@
+import Team from "../../HomeComponents/Team/Team";
+import Menus from "./Menus";
 
 
 const AboutUs = () => {
     return (
         <div>
-            About us
+
+          <Team></Team>
+          <Menus></Menus>
+
         </div>
     );
 };

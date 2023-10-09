@@ -2,8 +2,8 @@
 
 const Contact = () => {
     return (
-        <div className="my-10 w-4/6 mx-auto">
-            <h1 className="text-center font-bol text-4xl">Feel Free To Contact Us</h1>
+        <div className="my-10 md:w-5/6 lg:w-4/6 mx-auto">
+            <h1 className="text-center font-bold text-2xl md:text-4xl">Feel Free To Contact Us</h1>
             <form className=" shadow-xl px-10 py-11 flex flex-col ">
 
             <input type="text" name="name" placeholder="your name" className=" px-3 py-3 border-b border-black focus:outline-none " required />
@@ -20,7 +20,7 @@ const Contact = () => {
         <br />
             <textarea className="border-b border-black focus:outline-none" placeholder="message" id="" cols="30" rows="10"></textarea>
         <br />
-            <button className="btn btn-primary ">Submit</button>
+            <button className="btn bg-red-600 hover:bg-red-800 text-white ">Submit</button>
             </form>
         </div>
     );
